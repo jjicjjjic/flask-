@@ -40,10 +40,33 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#" onClick="location.href='LoginPage.html'">Profile</a>
                     </li>
+                    <li class="nav-item">
+                        <h1> hello, {{name}}!</h1>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
+    <form method="POST">
+        <p><label>내용을 입력하세요 <input type="text" name="content"></label>&nbsp&nbsp&nbsp<input type="submit" value="작성하기" onclick="alert('작성 완료!')"></p>
+    </form>
+ 
+    <table class="table">
+        <tr>
+            <th>내용</th>
+            <th>작성자</th>
+            <th>작성시간</th>
+        </tr>
+        {% for obj in data_list%}
+        <tbody>
+            <tr>
+                <td>{{obj.con}}</td>
+                <td>{{obj.writer}}</td>
+                <td>{{obj.time}}</td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
